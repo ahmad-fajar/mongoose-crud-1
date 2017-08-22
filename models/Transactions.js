@@ -9,22 +9,9 @@ const TransactionsSchema = new Schema({
   }],
 
   days     : Number,
-
-  out_date : {
-    type   : Date,
-    default: Date.now
-  },
-
-  due_date : {
-    type   : Date,
-    default: Date.now
-  },
-
-  in_date  : {
-    type   : Date,
-    default: Date.now
-  },
-
+  out_date : Date,
+  due_date : Date,
+  in_date  : Date,
   fine     : Number,
 
   booklist : [{

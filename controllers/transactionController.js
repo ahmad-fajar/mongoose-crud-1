@@ -1,17 +1,23 @@
 'use strict'
 
 const Trans = require('../models/Transactions')
+const denda = require('../helpers/fineCounter')
 
 
 // create
 exports.addTransaction = (req, res) => {
+  let outDate = denda.outDate(new Date());
+  let dueDate = denda.dueDate(req.body.days, (new Date()));
+  let inDate  = new Date(req.body.in_date); // date format: YYYY-mm-dd
+  let fine    = denda.fine(req.body.days, outDate, inDate);
+
   let data = {
     memberid : req.body.memberid,
     days     : req.body.days,
-    out_date : new Date(),
-    due_date : new Date(),
-    in_date  : new Date(),
-    fine     : req.body.fine,
+    out_date : outDate,
+    due_date : dueDate,
+    in_date  : inDate,
+    fine     : fine,
     booklist : req.body.booklist
   }
 
