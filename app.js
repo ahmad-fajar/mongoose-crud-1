@@ -22,12 +22,14 @@ app.use(bodyParser.json({ type : 'application/x-www-form-urlencoded'}));
 
 
 // routes
-const books = require('./routes/bookRoutes');
-const customers = require('./routes/customerRoutes')
+const books        = require('./routes/bookRoutes');
+const customers    = require('./routes/customerRoutes')
+const transactions = require('./routes/transactionRoutes')
 
 app.get('/', (req, res) => res.send('Index Page'))
 app.use('/books', books);
 app.use('/customers', customers)
+app.use('/transactions', transactions)
 
 
 app.listen(3000, () => console.log('--- Listening on port 3000 ---'))

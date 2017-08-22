@@ -10,5 +10,5 @@ const CustomersSchema = new Schema({
   'phone'    : String
 });
 
-const Customers = mongoose.model('Customers', CustomersSchema);
+const Customers = mongoose.model('customers', CustomersSchema);
 module.exports = Customers;
