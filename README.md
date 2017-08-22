@@ -5,7 +5,7 @@
   * `npm install`
 2. Run the app by entering following into command line
   * `npm start`  or  `nodemon app.js`
-3. This app use **mongo** for database adn **mongoose** for ODM.
+3. This app use **mongo** for database and **mongoose** for ODM.
 
 
 ### Routes
